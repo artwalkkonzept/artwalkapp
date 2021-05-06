@@ -5,7 +5,6 @@ import '../../App.css';
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../login/login';
 import Preferences from '../Preferences/Preferences';
-import { Link } from "@reach/router";
 function App() {
   const [token, setToken] = useState();
 
@@ -25,14 +24,10 @@ function App() {
             <Preferences />
           </Route>
           <Route path="/tour">
-            <Preferences />
           </Route>
         </Switch>
       </BrowserRouter>
-      <ul>
-      <li><Link to="/">Go back</Link></li>
-    </ul>
-    </div>
+      </div>
   );
 }
 

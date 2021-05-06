@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from "@reach/router";
-/*import Tour1 from './Tour1';
-import Tour2 from './Tour2';
-import Tour3 from './Tour3';*/
 
 function Tour(props) {
   return (
