@@ -76,9 +76,9 @@ $ npm install react-router-dom
 $ npm install --save-dev express cors
 
 To fix node and project create new react project (
-npx create-react-app my-app
-cd my-app
-npm start
+$ npx create-react-app my-app
+$ cd my-app
+$ npm start
 ) and move files from github
 In the project directory, you can run:
 
