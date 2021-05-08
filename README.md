@@ -71,10 +71,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 How to start the app 
 in app folder 
-$ npm install
+$ npm install or $ npm update
 $ npm install react-router-dom
 $ npm install --save-dev express cors
 
+To fix node and project create new react project (
+$ npx create-react-app my-app
+$ cd my-app
+$ npm start
+) and move files from github
 In the project directory, you can run:
 
 ### `yarn start` in first terminal
