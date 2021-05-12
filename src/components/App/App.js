@@ -5,9 +5,11 @@ import '../../App.css';
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../login/login';
 import Preferences from '../Preferences/Preferences';
-function App() {
-  const [token, setToken] = useState();
+import useToken from './useToken';
 
+function App() {
+  //const [token, setToken] = useState();
+  const { token, setToken } = useToken();
   if(!token) {
     return <Login setToken={setToken} />
   }

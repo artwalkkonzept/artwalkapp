@@ -6,9 +6,9 @@ function Gallery(props) {
     <div className="background-white">
       <h1>Gallery</h1>
       <ul>
-        {["image1", "image2", "image3"].map(fruit =>
+        {["image1", "image2", "image3"].map(image =>
           <li>
-            <Link to={`/stuff/${fruit}`}>{fruit}</Link>
+            <Link to={`/stuff/${image}`}>{image}</Link>
           </li>)}
       </ul>
     </div>

@@ -43,8 +43,24 @@ li{
   flex-wrap: wrap;
 }
 
-.Footer-link{
+.Footer-link {
   
+}
+
+.img-with-text img{
+  max-width:360px;
+  }
+
+.img-with-text {
+margin: auto;
+max-width:360px;
+width: calc(100vw - 16px);
+}
+
+.img-text {
+margin: auto;
+max-width:768px;
+width: calc(100vw - 16px);
 }
 
 /******* BURGERBAR******/
