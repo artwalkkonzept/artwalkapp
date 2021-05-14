@@ -97,7 +97,6 @@ $ git add .
 $ git commit -m "comment"
 $ git push -u
 ($ git pull)
-($ git merge)
 ($ git fetch)
 ($ git merge)
 
@@ -112,5 +111,5 @@ $ git -v
 $ git help
 
 ($ git checkout Peter)
-($ git checkout master)
-(git checkout -b <new-branch-name>)
+($ git checkout main)
+($ git checkout -b <new-branch-name>)
