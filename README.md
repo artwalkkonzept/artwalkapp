@@ -93,11 +93,24 @@ https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication
 ### `node server.js` in second terminal
 
 //git commands//
-($ git checkout Peter)
-($ git checkout master)
-$ git clone -b Peter --single-branch https://github.com/artwalkkonzept/artwalkapp.git
+$ git clone -b <branch-name> --single-branch https://github.com/artwalkkonzept/artwalkapp.git
 $ git add .
 $ git commit -m "comment"
 $ git push -u
-$ git pull
+($ git pull)
+($ git fetch)
 ($ git merge)
+
+($ git init)
+($ git checkout Peter)
+($ git checkout master)
+
+$ git install
+$ git i
+$ git show
+$ git -v
+$ git help
+
+($ git checkout Peter)
+($ git checkout main)
+($ git checkout -b <new-branch-name>)
