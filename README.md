@@ -87,6 +87,16 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3001/dashboard) to view it in the browser. !important http://localhost:3001/dashboard
 
-//Login//
+//Login satup toturial//
 https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 ### `node server.js` in second terminal
+
+//git commands//
+($git checkout Peter)
+($git checkout master)
+$git clone -b Peter --single-branch https://github.com/artwalkkonzept/artwalkapp.git
+$git add .
+$git commit -m "comment"
+$git push -u
+$git pull
+($git merge)
