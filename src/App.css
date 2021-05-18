@@ -47,11 +47,7 @@ li{
   
 }
 
-.img-with-text img{
-  max-width:360px;
-  }
-
-.img-with-text {
+.background-blue img {
 margin: auto;
 max-width:360px;
 width: calc(100vw - 16px);

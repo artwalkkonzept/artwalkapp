@@ -113,4 +113,4 @@ $ git help
 
 ($ git checkout Peter)
 ($ git checkout main)
-($ git checkout -b new-branch-name)
+($ git checkout -b new-branch-name) new branch

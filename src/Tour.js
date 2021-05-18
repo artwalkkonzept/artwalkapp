@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "@reach/router";
 
-let urlm = {
+let tourImg = {
   imageUrl1:"https://lh3.googleusercontent.com/d/1ZsRHQ_cl05QEypsodoCXQDADVndco0Cb=w686-h228-n?authuser=0",
   imageUrl2:"https://lh3.googleusercontent.com/d/1uOLm3215E5Erv2_i4kjbZjq8EIytKBPJ=w686-h228-n?authuser=0",
   imageUrl3:"https://lh3.googleusercontent.com/d/1na4PqSWAwoAlDBZbeAAykGw99WPQ5FGo=w686-h228-n?authuser=0",
@@ -13,18 +13,21 @@ function Tour(props) {
     <div className="background-blue">
       <h1>Tour</h1>
       <ul>
-        {[<Link to='/tour1'>ZKM-Tour</Link>, <Link to='/tour2'>Landschaften</Link>, <Link to='/tour3'>Impressionistische Landshaften</Link>].map(tour =>
+        {[<Link to='/tour'><img alt="" src={tourImg.imageUrl1} /><br/>Tours</Link>, 
+      <Link to='/tour1'><img alt="" src={tourImg.imageUrl2} /><br/>ZKM-Tour</Link>, 
+      <Link to='/tour2'><img alt="" src={tourImg.imageUrl3} /><br/>Landschaften</Link>, 
+      <Link to='/tour3'><img alt="" src={tourImg.imageUrl4} /><br/>Impressionistische Landshaften</Link>].map(tour =>
           <li>
             <Link to={`/${tour}`}>{tour}</Link>
           </li>)}
       </ul>
 
-<div className="img-with-text">
-      <img src={urlm.imageUrl1} />
-      <img src={urlm.imageUrl2} />
-      <img src={urlm.imageUrl3} />
-      <img src={urlm.imageUrl4} />
-        </div>
+{/*<div className="tourImg">
+      <img alt="" src={urlm.imageUrl1} />
+      <img alt="" src={urlm.imageUrl2} />
+      <img alt="" src={urlm.imageUrl3} />
+      <img alt="" src={urlm.imageUrl4} />
+      </div>*/}
   </div>
 );
 }
