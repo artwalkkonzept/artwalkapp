@@ -1,4 +1,3 @@
-import logo from '../../logo.svg';
 import React from 'react';
 import { Router } from "@reach/router";
 import { Link } from "@reach/router";
@@ -10,12 +9,9 @@ burgerbar*/
 
 import "../../App.css";
 
-/*import ShowStuff from "./ShowStuff";
-import FruitList from './FruitList';*/
 import Gallery from '../../Gallery';
 import Tour from '../../Tour';
 import Calender from '../../Calender';
-//import Nav from "../../Nav";
 import SideBar from "../../SideBar";
 import Content from "../../Content";
 import TourContent from "../../TourContent";
@@ -23,18 +19,23 @@ import Tour1 from '../../Tour1';
 import Tour2 from '../../Tour2';
 import Tour3 from '../../Tour3';
 import ShowStuff from '../../ShowStuff';
-import Footer from '../../Footer';       
-       
+import Footer from '../../Footer';     
+import About from '../../About';       
+import Team from '../../Team';    
+import Profil from '../../Profil'; 
+
 function App(props) {
   return (
     <div className="background-white">
-       
-<a className="App-link" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={logo} className="App-logo" alt="logo" /></a>
-
-      <SideBar /> {/* <Nav> is not a target for routing, so we put it outside of <Router>*/}
+  
+      <SideBar /> {/* <SideBar> is not a target for routing, so we put it outside of <Router>*/}
       <Router>
-        <Gallery path="/gallery"></Gallery>
+        <About path="/about"></About>
+        <Team path="/team"></Team>
+        <Profil path="/Profil"></Profil>
+
         <Tour path="/tour"></Tour>
+        <Gallery path="/gallery"></Gallery>
         <Calender path="/calender"></Calender>
         <Tour1 path="/tour1"></Tour1>
         <Tour2 path="/tour2"></Tour2>

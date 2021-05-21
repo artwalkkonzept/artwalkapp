@@ -1,26 +1,30 @@
 import React from 'react';
+import { Link } from "@reach/router";
 
 import './App.css';
 
-import NameList from './NameList';
-
-const url = 'https://sites.google.com/view/artwalkapp/';
 function Footer() {
   return (
-
-    <div className="background-gray">
-    <div className="Footer-team">
-        <NameList names={["David Heiermann", "Lena Ambrosch", "Antonia Opitz", "Daniel Jacoby", "Peter Frankild", "Liliya Ivanova"]} />
+      <div className="background-gray">
+ <div class="goTour">
+      <ul>
+      <li><Link to="/tour">🍔</Link></li>
+      <li><Link to="/tour">Tour</Link></li>
+      </ul>
+      </div>
+ <div class="goTeam">
+      <ul>
+      <li><Link to="/team">🍕</Link></li>
+      <li><Link to="/team">Team</Link></li>
+      </ul>
+      </div>
+ <div class="goProfil">
+      <ul>
+      <li><Link to="/profil">🍔</Link></li>
+      <li><Link to="/profil">Profil</Link></li>
+      </ul>
+      </div>
     </div>
-    <div className="Footer-link">
-        <h3>Links</h3>
-    <ul>
-      <li>
-    <a href={url}>ArtWalk</a></li>
-    </ul>
-    </div>
-    </div>
-    
   );
 }
 

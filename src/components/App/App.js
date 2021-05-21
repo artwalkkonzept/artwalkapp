@@ -1,4 +1,5 @@
 //import React, { useState } from 'react';
+import sidelogo from '../../logo.svg'; 
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -17,6 +18,8 @@ function App() {
 
   return (
     <div className="wrapper">
+<a className="sideLink" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={sidelogo} className="sidelogo" alt="logo" /></a>
+  
       <BrowserRouter>
         <Switch>
           <Route>
