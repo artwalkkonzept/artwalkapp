@@ -13,7 +13,8 @@ function Tour(props) {
     <div className="background-blue">
       <h1>Tour</h1>
       <ul>
-        {[<Link to='/tour'><img alt="" src={tourImg.imageUrl1} /><br/>Tours</Link>, 
+      <img class="tourImgTop" alt="" src={tourImg.imageUrl1} />
+        {[ 
       <Link to='/tour1'><img alt="" src={tourImg.imageUrl2} /><br/>ZKM-Tour</Link>, 
       <Link to='/tour2'><img alt="" src={tourImg.imageUrl3} /><br/>Landschaften</Link>, 
       <Link to='/tour3'><img alt="" src={tourImg.imageUrl4} /><br/>Impressionistische Landshaften</Link>].map(tour =>

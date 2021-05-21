@@ -6,7 +6,8 @@ function Content() {
   return (
     <ul>
       <li>
-    <a href={url}>ArtWalk</a></li>
+        <p>This is content.js</p>
+      </li>
     </ul>
   );
 }

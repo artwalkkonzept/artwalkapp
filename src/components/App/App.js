@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import '../../App.css';
@@ -16,16 +17,15 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h1>Application "You are locked in to the ArtWalkApp"</h1>
       <BrowserRouter>
         <Switch>
-          <Route path="/dashboard">
+          <Route>
             <Dashboard />
           </Route>
-          <Route path="/preferences">
+          <Route>
             <Preferences />
           </Route>
-          <Route path="/tour">
+          <Route>
           </Route>
         </Switch>
       </BrowserRouter>
