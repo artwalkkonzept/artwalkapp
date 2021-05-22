@@ -114,3 +114,5 @@ $ git help
 ($ git checkout Peter)
 ($ git checkout main)
 ($ git checkout -b new-branch-name) new branch
+
+--- start with Windows "npm update" and "npm fix update". And make this change to the App.js file commend out the import useTogen, const = useToken(); and commend in the const to = usestate(); node server.js and npm start in two different terminals. ---
