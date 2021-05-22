@@ -15,9 +15,9 @@ function Tour(props) {
       <ul>
       <img class="tourImgTop" alt="" src={tourImg.imageUrl1} />
         {[ 
-      <Link to='/tour1'><img alt="" src={tourImg.imageUrl2} /><br/>ZKM-Tour</Link>, 
-      <Link to='/tour2'><img alt="" src={tourImg.imageUrl3} /><br/>Landschaften</Link>, 
-      <Link to='/tour3'><img alt="" src={tourImg.imageUrl4} /><br/>Impressionistische Landshaften</Link>].map(tour =>
+      <Link class="tourImg" to='/tour1'><img alt="" src={tourImg.imageUrl2} /><br/>ZKM-Tour</Link>, 
+      <Link class="tourImg" to='/tour2'><img alt="" src={tourImg.imageUrl3} /><br/>Landschaften</Link>, 
+      <Link class="tourImg" to='/tour3'><img alt="" src={tourImg.imageUrl4} /><br/>Impressionistische Landshaften</Link>].map(tour =>
           <li>
             <Link to={`/${tour}`}>{tour}</Link>
           </li>)}

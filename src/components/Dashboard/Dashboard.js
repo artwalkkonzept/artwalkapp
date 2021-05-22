@@ -18,17 +18,20 @@ import TourContent from "../../TourContent";
 import Tour1 from '../../Tour1';
 import Tour2 from '../../Tour2';
 import Tour3 from '../../Tour3';
-import ShowStuff from '../../ShowStuff';
-import Footer from '../../Footer';     
+import ShowStuff from '../../ShowStuff';    
 import About from '../../About';       
 import Team from '../../Team';    
 import Profil from '../../Profil'; 
 
+import Footer from '../../Footer'; 
 function App(props) {
   return (
     <div className="background-white">
   
       <SideBar /> {/* <SideBar> is not a target for routing, so we put it outside of <Router>*/}
+      
+      <Content/> {/* <Content> is not a target for routing, so we put it outside of <Router>*/}
+      
       <Router>
         <About path="/about"></About>
         <Team path="/team"></Team>
@@ -46,8 +49,7 @@ function App(props) {
         <ShowStuff path="/stuff/:name"></ShowStuff>
         <TourContent path="/tourContent/:name"></TourContent>
       </Router>
-      <Content/> {/* <Content> is not a target for routing, so we put it outside of <Router>*/}
-      <div class="go_back">
+     <div class="go_back">
       <ul>
       <li><Link to="/">Go back</Link></li>
       </ul>

@@ -12,7 +12,7 @@ function Content() {
         <p>This is content.js</p>
       </li>
       <li>
-      <a className="homeLink" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={contents} className="contentsLogo" alt="logo" /></a>
+      <a className="contentsLink" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={contents} className="contentsImg" alt="logo" /></a>
       </li>
     </ul>
     </div>      

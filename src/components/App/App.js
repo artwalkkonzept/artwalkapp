@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="wrapper">
-<a className="sideLink" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={sidelogo} className="sidelogo" alt="logo" /></a>
+<a className="sideLink" href="https://sites.google.com/view/artwalkapp/english" target="_blank" rel="noopener noreferrer"><img src={sidelogo} className="sideImg" alt="logo" /></a>
   
       <BrowserRouter>
         <Switch>
