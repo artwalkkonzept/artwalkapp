@@ -8,7 +8,7 @@ function Tour2(props) {
       <ul>
         {["Leice", "Nicon", "Canon"].map(fruit =>
           <li>
-            <Link to={`/stuff/${fruit}`}>{fruit}</Link>
+            <Link to={`/showstuff/${fruit}`}>{fruit}</Link>
           </li>)}
       </ul> <ul>
       <li><Link to="/tour">GO BACK</Link></li>

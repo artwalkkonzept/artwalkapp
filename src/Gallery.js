@@ -8,7 +8,7 @@ function Gallery(props) {
       <ul>
         {["image1", "image2", "image3"].map(image =>
           <li>
-            <Link to={`/stuff/${image}`}>{image}</Link>
+            <Link to={`/showstuff/${image}`}>{image}</Link>
           </li>)}
       </ul>
     </div>

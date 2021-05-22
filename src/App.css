@@ -45,8 +45,6 @@ li{
   position: fixed;
   bottom: 0;
   width: calc(100vw - 16px);
-            padding: 10px 10px 0px 10px;
-            height: 40px;
 }
 
 .background-blue img {

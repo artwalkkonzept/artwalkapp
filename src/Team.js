@@ -8,7 +8,7 @@ function Team(props) {
       <ul>
         {["Team 1", "Team 2", "Team 3"].map(team =>
           <li>
-            <Link to={`/stuff/${team}`}>{team}</Link>
+            <Link to={`/showstuff/${team}`}>{team}</Link>
           </li>)}
       </ul>
     </div>

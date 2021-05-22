@@ -1,6 +1,5 @@
-//import React, { useState } from 'react';
+import React, { useState } from 'react';
 import sidelogo from '../../logo.svg'; 
-import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import '../../App.css';

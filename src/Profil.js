@@ -8,7 +8,7 @@ function Profil(props) {
       <ul>
         {["Profil 1", "Profil 2", "Profil 3"].map(profil =>
           <li>
-            <Link to={`/stuff/${profil}`}>{profil}</Link>
+            <Link to={`/showstuff/${profil}`}>{profil}</Link>
           </li>)}
       </ul>
     </div>
