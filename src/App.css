@@ -31,6 +31,7 @@ li{
 
 .background-blue {
   background: blue;
+  margin-bottom: 76px;
 }
 
 .background-green {
@@ -67,6 +68,8 @@ width: calc(100vw - 16px);
   position: absolute;
   bottom:85px;
   right: 16px;
+  position: fixed;
+  bottom: 80px;
 }
 
 .sideImg{
