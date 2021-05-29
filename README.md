@@ -91,6 +91,8 @@ Open [http://localhost:3000](http://localhost:3001/dashboard) to view it in the 
 
 //Login satup toturial//
 https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
+or
+https://bezkoder.com/react-jwt-auth/
 ### `node server.js` in second terminal
 
 //git commands//
