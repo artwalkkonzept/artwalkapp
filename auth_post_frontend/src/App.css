@@ -23,7 +23,6 @@
   justify-content: space-between;
   padding: .5rem 1rem;
   width: 150px;
-  height: 100%;
 }
 
 .bg-dark {
@@ -70,6 +69,11 @@ a.nav-link:hover, a.navbar-brand:hover {
   margin-top: 15px;
   border-top-width: 1px;
 }
+
+.list-group-item+.list-group-item.active {
+  margin-top: 15px;
+  border-top-width: 1px;
+}
 /*POSTS*/
 
 label {
@@ -85,8 +89,8 @@ label {
 .card {
   background-color: #f7f7f7;
   padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
+  margin: 0 auto ;
+  margin-top: 0;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
