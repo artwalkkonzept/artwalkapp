@@ -74,8 +74,15 @@ a.nav-link:hover, a.navbar-brand:hover {
   margin-top: 15px;
   border-top-width: 1px;
 }
+
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
 /*POSTS*/
 
+/*AUTH*/
 label {
   display: block;
   margin-top: 10px;
@@ -107,12 +114,8 @@ label {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-}
-
-.list {
-  text-align: left;
-  max-width: 750px;
-  margin: auto;
+  visibility: hidden;
+  display: none;
 }
 
 .submit-form {
@@ -124,3 +127,4 @@ label {
   max-width: 300px;
   margin: auto;
 }
+/*AUTH*/
