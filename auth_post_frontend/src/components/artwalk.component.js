@@ -153,14 +153,14 @@ export default class ArtWalk extends Component {
 
             {currentArtWalk.published ? (
               <button
-                className="badge badge-primary mr-2"
+                className="btn btn-primary mr-2"
                 onClick={() => this.updatePublished(false)}
               >
                 UnPublish
               </button>
             ) : (
               <button
-                className="badge badge-primary mr-2"
+                className="btn btn-primary mr-2"
                 onClick={() => this.updatePublished(true)}
               >
                 Publish
@@ -168,7 +168,7 @@ export default class ArtWalk extends Component {
             )}
 
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-danger mr-2"
               onClick={this.deleteArtWalk}
             >
               Delete
@@ -176,7 +176,7 @@ export default class ArtWalk extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="btn btn-success"
               onClick={this.updateArtWalk}
             >
               Update
