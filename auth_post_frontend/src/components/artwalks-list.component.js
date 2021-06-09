@@ -134,7 +134,7 @@ export default class ArtWalksList extends Component {
           </ul>
 
           <button
-            className="m-3 btn btn-sm btn-danger"
+            className="m-3 btn btn-danger"
             onClick={this.removeAllArtWalks}
           >
             Remove All
@@ -165,7 +165,7 @@ export default class ArtWalksList extends Component {
 
               <Link
                 to={"/artwalks/" + currentArtWalk.id}
-                className="badge badge-warning"
+                className="btn btn-warning"
               >
                 Edit
               </Link>
