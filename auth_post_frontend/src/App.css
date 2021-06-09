@@ -80,6 +80,10 @@ a.nav-link:hover, a.navbar-brand:hover {
   max-width: 750px;
   margin: auto;
 }
+
+li.list-group-item {
+  cursor: pointer;
+}
 /*POSTS*/
 
 /*AUTH*/
