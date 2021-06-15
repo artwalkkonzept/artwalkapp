@@ -7,14 +7,16 @@ import * as serviceWorker from "./serviceWorker";
 
 
 import reportWebVitals from './reportWebVitals';
+import ImgUpload from './ImgUpload';
 
 
 ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>
     <App />
+    <ImgUpload />
   </BrowserRouter>
-  </React.StrictMode>,
+</React.StrictMode>,
   document.getElementById("root")
 );
 
