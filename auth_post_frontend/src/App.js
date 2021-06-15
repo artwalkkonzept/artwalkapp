@@ -102,7 +102,8 @@ class App extends Component {
 
           </div>
         </nav>
-        
+
+
         <div className="sidebar-nav ml-auto">
           {currentUser ? (
             <div className="navbar-nav ml-auto">
