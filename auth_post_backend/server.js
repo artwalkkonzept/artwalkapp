@@ -5,12 +5,15 @@ const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
+
+global.__basedir = __dirname;
+
+
 var corsOptions = {
   origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
-
 
 // parse requests of content-type - application/json
 app.use(express.json());  /* bodyParser.json() is deprecated */
@@ -22,10 +25,12 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is deprecated */
 
-
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
+const initRoutes = require("./src/routes");
 const db = require("./app/models");
 const Role = db.role;
 
@@ -95,3 +100,6 @@ function initial() {
     }
   });
 }
+
+
+initRoutes(app);

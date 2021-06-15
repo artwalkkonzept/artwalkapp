@@ -19,6 +19,11 @@ import ArtWalk from "./components/artwalk.component";
 import ArtWalksList from "./components/artwalks-list.component";
 
 
+import UploadImages from "./components/image-upload.component";
+
+
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -103,6 +108,14 @@ class App extends Component {
           </div>
         </nav>
 
+        <div className="container">
+          <h3>bezkoder.com</h3>
+          <h4>React Image Upload with Preview</h4>
+
+          <div className="content">
+            <UploadImages />
+          </div>
+        </div>
 
         <div className="sidebar-nav ml-auto">
           {currentUser ? (
@@ -162,3 +175,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+
