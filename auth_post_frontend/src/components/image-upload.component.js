@@ -64,6 +64,14 @@ export default class UploadImages extends Component {
       });
   }
 
+
+  triggerDelete(img, index){
+    if(window.confirm("Are you sure you want to delete this task?")){
+       let files = [...this.img.files]
+       files.splice(index, 1);
+       this.setState({files: files})}
+    }
+
   render() {
     const {
       currentFile,
@@ -127,6 +135,14 @@ export default class UploadImages extends Component {
               imageInfos.map((img, index) => (
                 <li className="list-group-item" key={index}>
                   <a href={img.url}>{img.name}</a>
+            <button
+              className="btn btn-success btn-sm"
+              onClick={(e)=>{
+                e.preventDefault();
+                this.triggerDelete(img, index);
+             }}>
+              delete
+            </button>
                 </li>
               ))}
           </ul>
@@ -134,4 +150,5 @@ export default class UploadImages extends Component {
       </div>
     );
   }
-}
+ }
+

@@ -7,12 +7,12 @@ import { BrowserRouter } from "react-router-dom";
 import ImgUpload from './ImgUpload';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>, 
+ReactDOM.render( 
   <React.StrictMode>
-  <ImgUpload />
+    <BrowserRouter>
+      <App />
+      <ImgUpload />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
