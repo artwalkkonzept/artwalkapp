@@ -18,8 +18,6 @@ import AddArtWalk from "./components/add-artwalk.component";
 import ArtWalk from "./components/artwalk.component";
 import ArtWalksList from "./components/artwalks-list.component";
 
-import ImgUpload from "./components/ImgUpload.component";
-
 
 class App extends Component {
   constructor(props) {
@@ -104,7 +102,7 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/add-img"} className="nav-link">
+              <Link to={"/ImgUpload"} className="nav-link">
                 Add Image
               </Link>
             </li>
@@ -155,7 +153,6 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
-            <Route path="/ImgUpload" component={ImgUpload} />
           </Switch>
         </div>
       </div>

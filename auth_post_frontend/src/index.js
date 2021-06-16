@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
-import ImgUpload from './components/ImgUpload.component';
+import ImgUpload from './ImgUpload';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
