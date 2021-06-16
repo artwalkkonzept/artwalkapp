@@ -18,6 +18,8 @@ import AddArtWalk from "./components/add-artwalk.component";
 import ArtWalk from "./components/artwalk.component";
 import ArtWalksList from "./components/artwalks-list.component";
 
+import ImgUpload from "./components/ImgUpload.component";
+
 
 class App extends Component {
   constructor(props) {
@@ -61,6 +63,10 @@ class App extends Component {
               <Link to={"/home"} className="nav-link">
                 Public
               </Link>
+            </li><li className="nav-item">
+              <Link to={"/ImgUpload"} className="nav-link">
+              ImgUpload
+              </Link>
             </li>
 
             {showModeratorBoard && (
@@ -87,7 +93,6 @@ class App extends Component {
               </li>
             )}
 
-
             <li className="nav-item"> 
               <Link to={"/Artwalks"} className="nav-link">
               ArtWalks post
@@ -99,15 +104,12 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/ImgUpload"} className="nav-link">
+              <Link to={"/add-img"} className="nav-link">
                 Add Image
               </Link>
             </li>
-
-
           </div>
         </nav>
-
 
         <div className="sidebar-nav ml-auto">
           {currentUser ? (
@@ -146,12 +148,6 @@ class App extends Component {
             <Route exact path={["/", "/artwalks"]} component={ArtWalksList} />
             <Route exact path="/add" component={AddArtWalk} />
             <Route path="/artwalks/:id" component={ArtWalk} />
-          </Switch>
-        </div>
-
-
-        <div className="container mt-3">
-          <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
@@ -159,6 +155,7 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <Route path="/ImgUpload" component={ImgUpload} />
           </Switch>
         </div>
       </div>
