@@ -89,13 +89,18 @@ class App extends Component {
 
 
             <li className="nav-item"> 
-              <Link to={"/artwalks"} className="nav-link">
+              <Link to={"/Artwalks"} className="nav-link">
               ArtWalks post
               </Link>
             </li>
             <li className="nav-item">
               <Link to={"/add"} className="nav-link">
                 Add post
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/ImgUpload"} className="nav-link">
+                Add Image
               </Link>
             </li>
 
