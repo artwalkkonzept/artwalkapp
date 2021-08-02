@@ -133,9 +133,21 @@ export default class UploadImages extends Component {
           <ul className="list-group list-group-flush">
             {imageInfos &&
               imageInfos.map((img, index) => (
-                <li className="list-group-item" key={index}>
-                  <a href={img.url}>{img.name}</a>
-            <button
+                <li className="list-group-item" key={index}><h4>Name & Url</h4> 
+                  <a href={img.url}> {img.name}{img.url}</a>
+
+                  
+     
+ 
+				
+				<td  
+          style= {{color:'black'}}>
+          <button onClick={()=>{                this.triggerDelete(this.deleteImg, index)}
+             }>Delete</button>
+         </td>
+	      
+     
+         <button
               className="btn btn-success btn-sm"
               onClick={(e)=>{
                 e.preventDefault();
@@ -143,6 +155,11 @@ export default class UploadImages extends Component {
              }}>
               delete
             </button>
+		
+               
+        
+         
+            
                 </li>
               ))}
           </ul>
@@ -151,4 +168,15 @@ export default class UploadImages extends Component {
     );
   }
  }
-
+/*
+<button
+              className="btn btn-success btn-sm"
+              onClick={(e)=>{
+                e.preventDefault();
+                this.triggerDelete(img, index);
+             }}>
+              delete
+            </button>
+            
+              <button className="btn btn-danger mr-2" onClick={()=>{                this.confirmDeletion(this.deleteRecord, index)}
+             }> Delete </button>*/

@@ -172,7 +172,7 @@ export default class ArtWalk extends Component {
               onClick={this.deleteArtWalk}
             >
               Delete
-            </button>
+            </button >
 
             <button
               type="submit"

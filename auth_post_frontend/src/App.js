@@ -153,6 +153,7 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <Route path="*" component={whoops404} />
           </Switch>
         </div>
       </div>
@@ -161,3 +162,13 @@ class App extends Component {
 }
 
 export default App;
+
+export function whoops404() {
+  return (
+    <div>
+      <h1>
+        This page does not exits!
+      </h1>
+    </div>
+  )
+}

@@ -3,6 +3,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import UploadImages from "./components/image-upload.component";
+//import ImageGallery from "./components/image-gallery.component";
 
 function ImgUpload() {
   return (
