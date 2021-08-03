@@ -6,14 +6,17 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import ImgUpload from './ImgUpload';
 import reportWebVitals from './reportWebVitals';
+import nodeFsUnlink from './nodeFsUnlink';
 
 ReactDOM.render( 
   <React.StrictMode>
     <BrowserRouter>
       <App />
       <ImgUpload />
+      <nodeFsUnlink />
     </BrowserRouter>
   </React.StrictMode>,
+
   document.getElementById("root")
 );
 

@@ -157,17 +157,25 @@ export default class UploadImages extends Component {
             </button>
 		
                
-        
+            fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
          
             
                 </li>
               ))}
           </ul>
+          
         </div>
+
+
       </div>
     );
   }
  }
+
+ var fs = require('fs');
 /*
 <button
               className="btn btn-success btn-sm"
