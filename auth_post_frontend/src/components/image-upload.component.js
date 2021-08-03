@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import UploadService from "../services/file-upload.service";
+//import ImageUploader from "react-images-upload";
+
+
 
 export default class UploadImages extends Component {
   constructor(props) {
@@ -63,7 +66,6 @@ export default class UploadImages extends Component {
         });
       });
   }
-
 
   triggerDelete(img, index){
     if(window.confirm("Are you sure you want to delete this task?")){
@@ -134,20 +136,28 @@ export default class UploadImages extends Component {
             {imageInfos &&
               imageInfos.map((img, index) => (
                 <li className="list-group-item" key={index}><h4>Name & Url</h4> 
-                  <a href={img.url}> {img.name}{img.url}</a>
+                <a href={img.url}> [{img.name}, <br/>{img.url}]</a>
+        <br/>
+				<br/>
+          
+          <button onClick={()=>{this.triggerDelete(this.deleteImg, index)}
+             }> Delete </button>
+        
+	      <br/>
+        <br/>
 
-				<td  
-          style= {{color:'black'}}>
-          <button onClick={()=>{                this.triggerDelete(this.deleteImg, index)}
-             }>Delete</button>
-         </td>
-	      
-     
          <button
               className="btn btn-success btn-sm"
               onClick={(e)=>{
-                e.preventDefault();
-                this.triggerDelete(img, index);
+                this.deleteItem = item => () => {
+                  const filter = getter => val => getter(val) !== item.imageInfos
+                  this.setState({
+                    res: this.state.res.filter(filter(({imageInfos})=>imageInfos)),
+                    selectedItems: this.state.selectedItems.filter(
+                      filter(imageInfos=>imageInfos)
+                    )
+                  })
+                }
              }}>
               delete
             </button>
@@ -163,6 +173,7 @@ export default class UploadImages extends Component {
     );
   }
  }
+
 /*
 <button
               className="btn btn-success btn-sm"
@@ -175,3 +186,14 @@ export default class UploadImages extends Component {
             
               <button className="btn btn-danger mr-2" onClick={()=>{                this.confirmDeletion(this.deleteRecord, index)}
              }> Delete </button>*/
+
+               /*<ImageUploader
+              withIcon={false}
+              withPreview={true}
+              label=""
+              buttonText="Upload Images"
+              onChange={this.onDrop}
+              imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg"]}
+              maxFileSize={1048576}
+              fileSizeError=" file size is too big"
+            />*/
