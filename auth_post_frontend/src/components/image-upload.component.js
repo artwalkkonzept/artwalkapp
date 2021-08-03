@@ -136,10 +136,6 @@ export default class UploadImages extends Component {
                 <li className="list-group-item" key={index}><h4>Name & Url</h4> 
                   <a href={img.url}> {img.name}{img.url}</a>
 
-                  
-     
- 
-				
 				<td  
           style= {{color:'black'}}>
           <button onClick={()=>{                this.triggerDelete(this.deleteImg, index)}
@@ -156,13 +152,6 @@ export default class UploadImages extends Component {
               delete
             </button>
 		
-               
-            fs.unlink('mynewfile2.txt', function (err) {
-  if (err) throw err;
-  console.log('File deleted!');
-});
-         
-            
                 </li>
               ))}
           </ul>
@@ -174,8 +163,6 @@ export default class UploadImages extends Component {
     );
   }
  }
-
- var fs = require('fs');
 /*
 <button
               className="btn btn-success btn-sm"
