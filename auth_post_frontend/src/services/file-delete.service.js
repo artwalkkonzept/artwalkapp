@@ -1,34 +1,32 @@
-// include node fs (File System) module 
-var fs = require('fs');
- 
-// delete file named 'sample.txt'
-fs.unlink('auth_post_backend/resources/static/assets/uploads/WP_20180714_001.jpg', function (err) {
-    if (err) throw err;
-    // if no error, file has been deleted successfully
-    console.log('File deleted!');
-});
-//$ node file-delete.service.js
-//node commands: http://riaevangelist.github.io/node-cmd/
+/*import React from 'react';
+import axios from 'axios';
 
-/*import http from "../http-imgupload";
+class DeleteRequest extends React.Component {
+    constructor(props) {
+        super(props);
 
-class FileDeleteService {
-    delete(file, onDeleteProgress) {
-    let formData = new FormData();
+        this.state = { 
+            status: null
+        };
+    }
 
-    formData.append("file", file);
+    componentDidMount() {
+        // Simple DELETE request with axios
+        axios.delete('https://reqres.in/api/posts/1')
+            .then(() => this.setState({ status: 'Delete successful' }));
+    }
 
-    return http.post("/upload", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      onDeleteProgress,
-    });
-  }
-
-  deleteFiles() {
-    return http.delete("/files");
-  }
+    render() {
+        const { status } = this.state;
+        return (
+            <div className="card text-center m-3">
+                <h5 className="card-header">Simple DELETE Request</h5>
+                <div className="card-body">
+                    Status: {status}
+                </div>
+            </div>
+        );
+    }
 }
 
-export default new FileDeleteService();*/
+export { DeleteRequest }; */
