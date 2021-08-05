@@ -173,7 +173,7 @@ export default class UploadImages extends Component {
     );
   }
  }
-
+/*List has an array with line shift */
 /*
 <button
               className="btn btn-success btn-sm"
