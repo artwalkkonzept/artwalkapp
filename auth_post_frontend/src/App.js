@@ -17,6 +17,7 @@ import BoardAdmin from "./components/board-admin.component";
 import AddArtWalk from "./components/add-artwalk.component";
 import ArtWalk from "./components/artwalk.component";
 import ArtWalksList from "./components/artwalks-list.component";
+import ArtWalksPublish from "./components/artwalk-published.component";
 
 
 class App extends Component {
@@ -106,6 +107,11 @@ class App extends Component {
                 Add Image
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/artwalks/published"} className="nav-link">
+                published
+              </Link>
+            </li>
           </div>
         </nav>
 
@@ -144,6 +150,7 @@ class App extends Component {
         <div className="container mt-3">
           <Switch>
             <Route exact path={["/", "/artwalks"]} component={ArtWalksList} />
+            <Route exact path={["/", "/ArtWalks/published"]} component={ArtWalksPublish} />
             <Route exact path="/add" component={AddArtWalk} />
             <Route path="/artwalks/:id" component={ArtWalk} />
             <Route exact path={["/", "/home"]} component={Home} />
