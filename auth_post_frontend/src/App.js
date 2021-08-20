@@ -174,7 +174,7 @@ export function whoops404() {
   return (
     <div>
       <h1>
-        This page does not exits!
+      HTTP 404! This page does not exits!
       </h1>
     </div>
   )
