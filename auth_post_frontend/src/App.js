@@ -169,3 +169,13 @@ class App extends Component {
 }
 
 export default App;
+
+export function whoops404() {
+  return (
+    <div>
+      <h1>
+       Error 404! - This page does not exits!
+      </h1>
+    </div>
+  )
+}
