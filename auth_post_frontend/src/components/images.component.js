@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import UploadService from "../services/file-upload.service";
 
-export default class UploadImages extends Component {
+export default class Images extends Component {
   constructor(props) {
     super(props);
     this.selectFiles = this.selectFiles.bind(this);
     this.upload = this.upload.bind(this);
-    this.uploadImages = this.uploadImages.bind(this);
+    this.Images = this.Images.bind(this);
 
     this.state = {
       selectedFiles: undefined,
@@ -77,7 +77,7 @@ export default class UploadImages extends Component {
       });
   }
 
-  uploadImages() {
+  Images() {
     const selectedFiles = this.state.selectedFiles;
 
     let _progressInfos = [];
@@ -106,20 +106,11 @@ export default class UploadImages extends Component {
       <div className="container">
         <div className="row">
           <div className="col-8">
-            <label className="btn btn-default p-0">
-              <input type="file" multiple accept="image/*" onChange={this.selectFiles} />
-            </label>
+            
+
           </div>
 
-          <div className="col-4">
-            <button
-              className="btn btn-success btn-sm"
-              disabled={!selectedFiles}
-              onClick={this.uploadImages}
-            >
-              Upload
-            </button>
-          </div>
+         
         </div>
 
         {progressInfos &&
@@ -175,3 +166,19 @@ export default class UploadImages extends Component {
     );
   }
 }
+
+/*
+<label className="btn btn-default p-0">
+              <input type="file" multiple accept="image/*" onChange={this.selectFiles} />
+            </label>
+
+
+ <div className="col-4">
+            <button
+              className="btn btn-success btn-sm"
+              disabled={!selectedFiles}
+              onClick={this.Images}
+            >
+              Upload
+            </button>
+          </div>*/

@@ -4,14 +4,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
-import ImgUpload from './ImgUpload';
+//import ImgUpload from './ImgUpload';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render( 
   <React.StrictMode>
     <BrowserRouter>
       <App />
-      <ImgUpload />
     </BrowserRouter>
   </React.StrictMode>,
 
