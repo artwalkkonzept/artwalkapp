@@ -21,7 +21,7 @@ import ArtWalksPublish from "./components/artwalk-published.component";
 
 
 import ImgUpload from "./components/image-upload.component";
-import Images from "./components/images.component";
+import Images from "./components/image.component";
 
 
 class App extends Component {

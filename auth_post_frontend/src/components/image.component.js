@@ -100,7 +100,7 @@ export default class Images extends Component {
   }
 
   render() {
-    const { selectedFiles, previewImages, progressInfos, message, imageInfos } = this.state;
+    const { previewImages, progressInfos, message, imageInfos } = this.state;
 
     return (
       <div className="container">
