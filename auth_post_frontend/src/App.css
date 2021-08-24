@@ -94,7 +94,10 @@ a.nav-link:hover, a.navbar-brand:hover {
 li.list-group-item {
   cursor: pointer;
 }
-/*POSTS*/
+
+.row {display: block;}
+
+.MuiPagination-ul {flex-wrap: nowrap!important;}
 
 /*AUTH*/
 label {

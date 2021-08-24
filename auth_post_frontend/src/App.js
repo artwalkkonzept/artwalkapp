@@ -24,6 +24,9 @@ import ImgUpload from "./components/image-upload.component";
 import Images from "./components/image.component";
 
 
+const moment = require('moment'); // require
+const formattedDate = moment().format('llll'); 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +57,13 @@ class App extends Component {
 
   render() {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
-
+    const pstyle = {
+      color: "white",
+      backgroundColor: "purple",
+      padding: "10px",
+      borderRadius: "2%",
+      fontFamily: "Arial"
+    };
     return (
       <div>
         <nav className="navbar navbar-dark bg-dark">
@@ -135,7 +144,7 @@ class App extends Component {
               </li>
             </div>
           ) : (
-            <div className="navbar-nav ml-auto">
+            <div className="navbar-nav ml-auto"> 
               <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
                   Login
@@ -147,6 +156,9 @@ class App extends Component {
                   Sign Up
                 </Link>
               </li>
+              <li className="nav-item">
+            <p style={pstyle}>{formattedDate} </p>
+          </li>
             </div>
           )}
           </div>

@@ -1,27 +1,37 @@
 import React, { Component } from "react";
-import ArtWalkDataService from "../services/artwalk.service";
+import ArtwalkDataService from "../services/artwalk.service";
 import { Link } from "react-router-dom";
+
+import Pagination from "@material-ui/lab/Pagination";
 
 export default class ArtWalksList extends Component {
   constructor(props) {
     super(props);
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
-    this.retrieveArtWalks = this.retrieveArtWalks.bind(this);
+    this.retrieveArtwalks = this.retrieveArtwalks.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setActiveArtWalk = this.setActiveArtWalk.bind(this);
     this.removeAllArtWalks = this.removeAllArtWalks.bind(this);
     this.searchTitle = this.searchTitle.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.handlePageSizeChange = this.handlePageSizeChange.bind(this);
 
     this.state = {
       artwalks: [],
       currentArtWalk: null,
       currentIndex: -1,
-      searchTitle: ""
+      searchTitle: "",
+
+      page: 1,
+      count: 0,
+      pageSize: 1,
     };
+
+    this.pageSizes = [1, 6, 9];
   }
 
   componentDidMount() {
-    this.retrieveArtWalks();
+    this.retrieveArtwalks();
   }
 
   onChangeSearchTitle(e) {
@@ -32,15 +42,39 @@ export default class ArtWalksList extends Component {
     });
   }
 
-  retrieveArtWalks() {
-    ArtWalkDataService.getAll()
-      .then(response => {
+  getRequestParams(searchTitle, page, pageSize) {
+    let params = {};
+
+    if (searchTitle) {
+      params["title"] = searchTitle;
+    }
+
+    if (page) {
+      params["page"] = page - 1;
+    }
+
+    if (pageSize) {
+      params["size"] = pageSize;
+    }
+
+    return params;
+  }
+
+ retrieveArtwalks() {
+    const { searchTitle, page, pageSize } = this.state;
+    const params = this.getRequestParams(searchTitle, page, pageSize);
+
+    ArtwalkDataService.getAll(params)
+      .then((response) => {
+        const { artwalks, totalPages } = response.data;
+
         this.setState({
-          artwalks: response.data
+          artwalks: artwalks,
+          count: totalPages,
         });
         console.log(response.data);
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
   }
@@ -61,14 +95,37 @@ export default class ArtWalksList extends Component {
   }
 
   removeAllArtWalks() {
-    ArtWalkDataService.deleteAll()
+    ArtwalkDataService.deleteAll()
       .then(response => {
         console.log(response.data);
         this.refreshList();
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
+  }
+
+  handlePageChange(event, value) {
+    this.setState(
+      {
+        page: value,
+      },
+      () => {
+        this.retrieveArtwalks();
+      }
+    );
+  }
+
+  handlePageSizeChange(event) {
+    this.setState(
+      {
+        pageSize: event.target.value,
+        page: 1
+      },
+      () => {
+        this.retrieveArtwalks();
+      }
+    );
   }
 
   searchTitle() {
@@ -77,7 +134,7 @@ export default class ArtWalksList extends Component {
       currentIndex: -1
     });
 
-    ArtWalkDataService.findByTitle(this.state.searchTitle)
+    ArtwalkDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
           artwalks: response.data
@@ -90,7 +147,7 @@ export default class ArtWalksList extends Component {
   }
 
   render() {
-    const { searchTitle, artwalks, currentArtWalk, currentIndex } = this.state;
+    const { searchTitle, artwalks, currentArtWalk, currentIndex, page, count, pageSize, } = this.state;
 
     return (
       <div className="list row">
@@ -107,7 +164,7 @@ export default class ArtWalksList extends Component {
               <button
                 className="btn btn-outline-secondary"
                 type="button"
-                onClick={this.searchTitle}
+                onClick={this.retrieveArtwalks}
               >
                 Search
               </button>
@@ -117,18 +174,41 @@ export default class ArtWalksList extends Component {
         <div className="col-md-6">
           <h4>ArtWalk post list</h4>
 
+          <div className="mt-3">
+            {"Items per Page: "}
+            <select onChange={this.handlePageSizeChange} value={pageSize}>
+              {this.pageSizes.map((size) => (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              ))}
+            </select>
+            
+            <Pagination
+              className="my-3"
+              count={count}
+              page={page}
+              siblingCount={1}
+              boundaryCount={1}
+              variant="outlined"
+              shape="rounded"
+              onChange={this.handlePageChange}
+            />
+          </div>
+
           <ul className="list-group">
-            {artwalks &&
-              artwalks.map((artwalk, index) => (
+              {artwalks && artwalks.map((artwalk, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
                   onClick={() => this.setActiveArtWalk(artwalk, index)}
-                  key={index}
-                >
+                  key={index}>
                   {artwalk.title}
+                  
+                  <h4>{artwalk.title}</h4>
+                  <p>{artwalk.createdAt}</p>
                 </li>
               ))}
           </ul>
@@ -149,6 +229,11 @@ export default class ArtWalksList extends Component {
                   <strong>Title:</strong>
                 </label>{" "}
                 {currentArtWalk.title}
+              </div><div>
+                <label>
+                  <strong>Moment:</strong>
+                </label>{" "}
+                {currentArtWalk.createdAt}
               </div>
               <div>
                 <label>
@@ -173,7 +258,7 @@ export default class ArtWalksList extends Component {
           ) : (
             <div>
               <br />
-              <p>Please click on a ArtWalk news post</p>
+              <p>Please click on an ArtWalk news post</p>
             </div>
           )}
         </div>

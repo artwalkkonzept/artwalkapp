@@ -42,8 +42,8 @@ class ArtWalkDataService {
 //export default new ArtwalkService();
 
 //class ArtWalkDataService {
-  getAll() {
-    return http.get("/artwalks");
+  getAll(params) {
+    return http.get("/artwalks", { params });
   }
 
   get(id) {
@@ -63,7 +63,7 @@ class ArtWalkDataService {
   }
 
   deleteAll() {
-    return http.delete(`/artwalks`);
+    return http.delete("/artwalks");
   }
 
   findByTitle(title) {

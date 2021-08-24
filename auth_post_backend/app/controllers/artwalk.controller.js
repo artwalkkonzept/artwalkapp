@@ -1,11 +1,16 @@
 const config = require("../config/artwalk.config");
 const db = require("../models");
+const Artwalk = db.artwalks;
 const User = db.user;
 const Role = db.role;
 
 
-const Artwalk = db.artwalks;
+const getPagination = (page, size) => {
+  const limit = size ? +size : 3;
+  const offset = page ? page * limit : 0;
 
+  return { limit, offset };
+};
 
 // Create and Save a new Artwalk
 exports.create = (req, res) => {
@@ -15,39 +20,48 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Artwalk
+  // Create an Artwalk
   const artwalk = new Artwalk({
     title: req.body.title,
     description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    published: req.body.published ? req.body.published : false,
   });
 
   // Save artwalk in the database
   artwalk
     .save(artwalk)
-    .then(data => {
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Artwalk."
+          err.message || "Some error occurred while creating the Artwalk.",
       });
     });
 };
 // Retrieve all Artwalks from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+  const { page, size, title } = req.query;
+  var condition = title
+    ? { title: { $regex: new RegExp(title), $options: "i" } }
+    : {};
 
-  Artwalk.find(condition)
-    .then(data => {
-      res.send(data);
+  const { limit, offset } = getPagination(page, size);
+
+  Artwalk.paginate(condition, { offset, limit })
+    .then((data) => {
+      res.send({
+        totalItems: data.totalDocs,
+        artwalks: data.docs,
+        totalPages: data.totalPages,
+        currentPage: data.page - 1,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving artwalks."
+          err.message || "Some error occurred while retrieving artwalks.",
       });
     });
 };
@@ -56,88 +70,97 @@ exports.findOne = (req, res) => {
   const id = req.params.id;
 
   Artwalk.findById(id)
-    .then(data => {
+    .then((data) => {
       if (!data)
         res.status(404).send({ message: "Not found Artwalk with id " + id });
       else res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res
         .status(500)
         .send({ message: "Error retrieving Artwalk with id=" + id });
     });
 };
-// Update a Artwalk by the id in the request
+
+// Update an Artwalk by the id in the request
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
-      message: "Data to update can not be empty!"
+      message: "Data to update can not be empty!",
     });
   }
 
   const id = req.params.id;
 
   Artwalk.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
-    .then(data => {
+    .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Artwalk with id=${id}. Maybe Artwalk was not found!`
+          message: `Cannot update Artwalk with id=${id}. Maybe Artwalk was not found!`,
         });
       } else res.send({ message: "Artwalk was updated successfully." });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Error updating Artwalk with id=" + id
+        message: "Error updating Artwalk with id=" + id,
       });
     });
 };
-// Delete a Artwalk with the specified id in the request
+// Delete an Artwalk with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
   Artwalk.findByIdAndRemove(id, { useFindAndModify: false })
-    .then(data => {
+    .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Artwalk with id=${id}. Maybe Artwalk was not found!`
+          message: `Cannot delete Artwalk with id=${id}. Maybe Artwalk was not found!`,
         });
       } else {
         res.send({
-          message: "Artwalk was deleted successfully!"
+          message: "Artwalk was deleted successfully!",
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Artwalk with id=" + id
+        message: "Could not delete Artwalk with id=" + id,
       });
     });
 };
 // Delete all Artwalks from the database.
 exports.deleteAll = (req, res) => {
   Artwalk.deleteMany({})
-    .then(data => {
+    .then((data) => {
       res.send({
-        message: `${data.deletedCount} Artwalks were deleted successfully!`
+        message: `${data.deletedCount} Artwalks were deleted successfully!`,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Artwalks."
+          err.message || "Some error occurred while removing all artwalks.",
       });
     });
 };
-// Find all published Artwalks
+// Find all published Tutorials
 exports.findAllPublished = (req, res) => {
-  Artwalk.find({ published: true })
-    .then(data => {
-      res.send(data);
+  const { page, size } = req.query;
+  const { limit, offset } = getPagination(page, size);
+
+  Artwalk.paginate({ published: true }, { offset, limit })
+    .then((data) => {
+      res.send({
+        totalItems: data.totalDocs,
+        artwalks: data.docs,
+        totalPages: data.totalPages,
+        currentPage: data.page - 1,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving artwalks."
+          err.message || "Some error occurred while retrieving artwalks.",
       });
     });
 };

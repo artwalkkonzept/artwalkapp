@@ -1,4 +1,4 @@
-module.exports = mongoose => {
+module.exports = (mongoose, mongoosePaginate) => {
   var schema = mongoose.Schema(
     {
       title: String,
@@ -14,6 +14,8 @@ module.exports = mongoose => {
     return object;
   });
 
+  schema.plugin(mongoosePaginate);
+  
   const Artwalk = mongoose.model("artwalk", schema);
   return Artwalk;
 };

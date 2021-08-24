@@ -25,7 +25,7 @@ module.exports = app => {
 
 
 //module.exports = app => {
-  const artwalks = require("../controllers/artwalk.controller.js");
+ const artwalks = require("../controllers/artwalk.controller.js");
 
   var router = require("express").Router();
 
@@ -41,10 +41,10 @@ module.exports = app => {
   // Retrieve a single Artwalk with id
   router.get("/:id", artwalks.findOne);
 
-  // Update a Artwalk with id
+  // Update an Artwalk with id
   router.put("/:id", artwalks.update);
 
-  // Delete a Artwalk with id
+  // Delete an Artwalk with id
   router.delete("/:id", artwalks.delete);
 
   // Create a new Artwalk
