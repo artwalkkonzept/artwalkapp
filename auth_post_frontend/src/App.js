@@ -9,6 +9,7 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
+import User from "./components/user.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
@@ -25,7 +26,7 @@ import Images from "./components/image.component";
 
 
 const moment = require('moment'); // require
-const formattedDate = moment().format('llll'); 
+const formattedDate = moment().format('llll');
 
 class App extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class App extends Component {
   }
 
   render() {
+    
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
     const pstyle = {
       color: "white",
@@ -64,6 +66,7 @@ class App extends Component {
       borderRadius: "2%",
       fontFamily: "Arial"
     };
+    
     return (
       <div>
         <nav className="navbar navbar-dark bg-dark">
@@ -176,6 +179,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/user" component={User} />
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
