@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "user_frankild",
+        "MONGO_PASSWORD": "SfcUkr44iXbp76Ot",
+        "MONGO_DB": "frankild-react-dev"
+    }
+}
