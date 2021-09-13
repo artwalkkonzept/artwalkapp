@@ -8,17 +8,17 @@ burgerbar*/
 
 import "./App.css";
 
-import FruitList from './FruitList';
-import Tour from './Tour';
-import Shop from './Shop';
-import About from './Calender';
-import Nav from "./Nav";
-import Content from "./Content";
+//import FruitList from './FruitList';
+import Tour from './components/pages/Tour';
+import Shop from './components/pages/Shop';
+import About from './components/pages/Calender';
+import Nav from "./components/pages/Navbar";
+import Content from "./components/pages/Content";
 /*import ShowStuff from "./ShowStuff";*/
-import TourContent from "./TourContent";
-import Tour1 from './Tour1';
-import Tour2 from './Tour2';
-import Tour3 from './Tour3';
+import TourContent from "./components/pages/TourContent";
+import Tour1 from './components/pages/Tour1';
+import Tour2 from './components/pages/Tour2';
+import Tour3 from './components/pages/Tour3';
 
 function App(props) {
   return (
@@ -26,7 +26,6 @@ function App(props) {
        
       <Nav /> {/* <Nav> is not a target for routing, so we put it outside of <Router>*/}
       <Router>
-        <FruitList path="/fruitList"></FruitList>
         <Tour path="/tour"></Tour>
         <Shop path="/shop"></Shop>
         <About path="/calender"></About>
@@ -44,3 +43,5 @@ function App(props) {
 }
 
 export default App;
+
+/*<FruitList path="/fruitList"></FruitList>*/

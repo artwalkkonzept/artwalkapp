@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router } from "@reach/router";
-import { Link } from "@reach/router";
+import { Router, Link } from "@reach/router";
 
 /*import ReactDOM from "react-dom";
 
@@ -11,17 +10,17 @@ import "../../App.css";
 
 /*import ShowStuff from "./ShowStuff";
 import FruitList from './FruitList';*/
-import Gallery from '../../Gallery';
-import Tour from '../../Tour';
-import Calender from '../../Calender';
-import Nav from "../../Nav";
-import Content from "../../Content";
-import TourContent from "../../TourContent";
-import Tour1 from '../../Tour1';
-import Tour2 from '../../Tour2';
-import Tour3 from '../../Tour3';
-import ShowStuff from '../../ShowStuff';
-import Footer from '../../Footer';
+import Gallery from '../pages/Gallery';
+import Tour from '../pages/Tour';
+import Calender from '../pages/Calender';
+import Nav from "../pages/Navbar";
+import Content from "../pages/Content";
+import TourContent from "../pages/TourContent";
+import Tour1 from '../pages/Tour1';
+import Tour2 from '../pages/Tour2';
+import Tour3 from '../pages/Tour3';
+import ShowStuff from '../pages/ShowStuff';
+import Footer from '../pages/Footer';
 
 function App(props) {
   return (

@@ -20,10 +20,10 @@ function Tour(props) {
       </ul>
 
 <div className="img-with-text">
-      <img src={urlm.imageUrl1} />
-      <img src={urlm.imageUrl2} />
-      <img src={urlm.imageUrl3} />
-      <img src={urlm.imageUrl4} />
+      <img alt="" src={urlm.imageUrl1} />
+      <img alt="" src={urlm.imageUrl2} />
+      <img alt="" src={urlm.imageUrl3} />
+      <img alt="" src={urlm.imageUrl4} />
         </div>
   </div>
 );

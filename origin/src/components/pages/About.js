@@ -6,7 +6,7 @@ function About(props) {
   return (
     <div className="background-orange">
       <h1>About</h1>
-      <p>This app is about Routing..</p>
+      <p>This app is about ArtWalk..</p>
       <Link to="/">Go back</Link>
     </div>
   );
