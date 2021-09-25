@@ -44,7 +44,8 @@ function App() {
       <div className="background-yellow">
        
       <Nav /> {/* <Nav> is not a target for routing, so we put it outside of <Router>*/}
-      <Router>
+    
+     <Router>
         <Tour path="/tour"></Tour>
         <Shop path="/shop"></Shop>
         <About path="/about"></About>
