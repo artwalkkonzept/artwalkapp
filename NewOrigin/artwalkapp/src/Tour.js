@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from "@reach/router";
 
 let tourImg = {
-  imageUrl1:"https://lh3.googleusercontent.com/d/1ZsRHQ_cl05QEypsodoCXQDADVndco0Cb=w686-h228-n?authuser=0",
-  imageUrl2:"https://lh3.googleusercontent.com/d/1uOLm3215E5Erv2_i4kjbZjq8EIytKBPJ=w686-h228-n?authuser=0",
-  imageUrl3:"https://lh3.googleusercontent.com/d/1na4PqSWAwoAlDBZbeAAykGw99WPQ5FGo=w686-h228-n?authuser=0",
-  imageUrl4:"https://lh3.googleusercontent.com/d/1Nt42rQ6PaQcw3m6-OVj7YGSp6RIIHXiA=w686-h228-n?authuser=0"
+  imageUrl1:"https://",
+  imageUrl2:"https://",
+  imageUrl3:"https://",
+  imageUrl4:"https://"
 }
 
 function Tour(props) {
