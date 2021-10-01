@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dbConfig = require("./app/config/db.config");
 
+const mongoose = require("mongoose");
 const app = express();
 
 
@@ -37,10 +38,8 @@ const Role = db.role;
 
 db.mongoose
 //.connect(db.url, {
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/Test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
