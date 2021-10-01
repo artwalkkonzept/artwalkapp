@@ -1,5 +1,5 @@
 {
-  "name": "node-js-jwt-artwalk-mongodb",
+  "name": "node-js-jwt-artwalk-backend",
   "version": "1.0.0",
   "description": "Node.js + MongoDB: JWT Authentication & Artwalkorization",
   "main": "server.js",
