@@ -185,7 +185,6 @@ export default class ArtWalksPublished extends Component {
                 onClick={() => this.setActiveArtWalk(artwalk, index)}
                 key={index}>
                 <h4>{artwalk.title}</h4>
-                <p>{artwalk.description}</p>
               </li>
             ))}
           </ul>
@@ -217,10 +216,6 @@ export default class ArtWalksPublished extends Component {
       </div>
     );
   }
-
-  //simulateClick(e) {
-  //  e.click()
-  //}
 }
 
 /* <div>
