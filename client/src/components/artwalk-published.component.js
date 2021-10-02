@@ -149,7 +149,7 @@ export default class ArtWalksPublished extends Component {
   }
 
   render() {
-    const { searchTitle, artwalks, currentIndex, } = this.state;
+    const { searchTitle, artwalks, currentArtWalk, currentIndex, } = this.state;
 
     return (
       <div className="list row">
@@ -180,7 +180,10 @@ export default class ArtWalksPublished extends Component {
                 className={
                   "list-group-item " +
                   (index === currentIndex ? "active" : "")
-                }>
+                }
+                ref={this.simulateClick}
+                onClick={() => this.setActiveArtWalk(artwalk, index)}
+                key={index}>
                 <h4>{artwalk.title}</h4>
                 <p>{artwalk.description}</p>
               </li>
@@ -188,7 +191,29 @@ export default class ArtWalksPublished extends Component {
           </ul>
          
         </div>
-       
+        <div className="col-md-6">
+          {currentArtWalk ? (
+            <div>
+              <h4>ArtWalk</h4>
+              <div>
+                <label>
+                  <strong>Title:</strong>
+                </label>{" "}
+                {currentArtWalk.title}
+              </div>
+              <div>
+                <label>
+                  <strong>Description:</strong>
+                </label>{" "}
+                {currentArtWalk.description}
+              </div>
+            
+            </div>
+          ) : (
+            <div>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
