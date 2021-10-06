@@ -208,7 +208,6 @@ export default class ArtWalksList extends Component {
                   {artwalk.title}
                   
                   <h4>{artwalk.title}</h4>
-                  <p>{artwalk.createdAt}</p>
                 </li>
               ))}
           </ul>
@@ -229,11 +228,6 @@ export default class ArtWalksList extends Component {
                   <strong>Title:</strong>
                 </label>{" "}
                 {currentArtWalk.title}
-              </div><div>
-                <label>
-                  <strong>Moment:</strong>
-                </label>{" "}
-                {currentArtWalk.createdAt}
               </div>
               <div>
                 <label>
