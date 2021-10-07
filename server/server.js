@@ -38,7 +38,7 @@ const Role = db.role;
 
 db.mongoose
 //.connect(db.url, {
-  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/DBTest?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
 
   .then(() => {
     console.log("Successfully connect to MongoDB.");
@@ -59,7 +59,7 @@ require("./app/routes/artwalk.routes")(app);
 require("./app/routes/user.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 54617;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
