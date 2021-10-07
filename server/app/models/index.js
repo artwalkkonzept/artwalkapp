@@ -1,4 +1,4 @@
-//const dbConfig = require("../config/db.config.js");
+const dbConfig = require("../config/db.config.js");
 
 
 const mongoose = require('mongoose');
@@ -16,7 +16,7 @@ db.role = require("./role.model");
 db.ROLES = ["user", "admin", "moderator"];
 
 
-//db.url = dbConfig.url;
+db.url = dbConfig.url;
 
 db.artwalks = require("./artwalk.model.js")(mongoose, mongoosePaginate);
 
