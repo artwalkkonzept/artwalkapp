@@ -38,8 +38,7 @@ const Role = db.role;
 
 db.mongoose
 //.connect(db.url, {
-  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/Test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
-
+  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/artwalksDB?retryWrites=true&w=majority")
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
