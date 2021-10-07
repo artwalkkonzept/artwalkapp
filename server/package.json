@@ -4,10 +4,11 @@
   "description": "Node.js + MongoDB: JWT Authentication & Artwalkorization",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd server && node server.js",
-    "react-dev": "cd client && npm start",
-    "heroku-postbuild": "npm install --prefix client"
+    "dev": "cd client && npm start",
+    "preinstall": "cd server && npm install",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
   },
   "keywords": [
     "nodejs",
