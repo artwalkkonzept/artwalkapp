@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cd clon_auth_backend && node server.js",
-    "dev": "cd clon_auth_frontend && npm start",
-    "preinstall": "cd clon_auth_backend && npm install",
-    "install": "cd clon_auth_frontend && npm install",
-    "build": "cd clon_auth_frontend && npm run build"
+    "client-install": "npm install --prefix client",
+        "start": "cd clon_auth_backend && node server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION= false npm install --prefix client && npm run build --prefix client"
   },
   "eslintConfig": {
     "extends": "react-app"
