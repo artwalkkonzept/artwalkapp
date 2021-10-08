@@ -1,3 +1,5 @@
+
+const mongoose = require("mongoose");
 const express = require("express");
 // const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
@@ -18,8 +20,9 @@ app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is
 
 const db = require("./app/models");
 
+db.mongoose
 //.connect(db.url, {
-  db.mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/DBTest?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+  mongoose.connect("mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/DBTest?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
 
   .then(() => {
     console.log("Connected to the database!");
