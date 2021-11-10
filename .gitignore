@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+.eslintcache
+.zip
 
 # testing
 /coverage
@@ -17,9 +19,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.zip
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-artwalkapp-peter_10.11.21.zip
+yarn.lock
+yarn.lockpackage-lock.json
