@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
   HOST: "mongodb",
   PORT: 27017,
   DB: "classTest",
@@ -9,4 +9,4 @@ module.exports = {
 
 };
 
-//module.exports = {url: "mongodb://localhost:27017/ArtWalk_db"};
+//module.exports = {url: "mongodb://localhost:27017/ArtWalk_db"};*/
