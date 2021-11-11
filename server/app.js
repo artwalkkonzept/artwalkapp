@@ -38,7 +38,7 @@ const Role = db.role;
 
 db.mongoose
 //.connect(db.url, {
-  const url = process.env.MONGO_URL || 'mongodb://localhost/artwalk_db';
+  const url = process.env.MONGO_URL || 'mongodb://localhost/classTest';
   mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log("Successfully connect to MongoDB.");
