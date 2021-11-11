@@ -1,19 +1,16 @@
 {
-  "name": "artwalkapp_heroku_mongodb",
-  "version": "1.0.0",
-    "engines": {
-      "node": "14.17.5"
-    },
-    "scripts": {
-      "start": "cd server && npm start",
-      "react-dev": "cd client && npm start",
-      "test": "cd server && npm test",
-      "preinstall": "cd server && npm install",
-      "install": "cd client && npm install",
-      "build": "cd client && npm run build"
-    },
-    "license": "ISC",
-    "dependencies": {
-      "redux-thunk": "^2.3.0"
-    }
+"name": "artwalkapp_heroku_mongodb",
+"version": "1.0.0",
+  "engines": {
+    "node": "14.17.5",
+    "npm": "8.1.0"
+  },
+  "scripts": {
+    "start": "cd server && npm start",
+    "react-dev": "cd client && npm start",
+    "test": "cd server && npm test",
+    "preinstall": "cd server && npm install",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
   }
+}
