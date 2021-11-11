@@ -9,5 +9,9 @@
     "preinstall": "cd server && npm install",
     "install": "cd client && npm install",
     "build": "cd client && npm run build"
+  },
+  "engines": {
+    "node": "14.17.5",
+    "npm": "8.1.0"
   }
 }
