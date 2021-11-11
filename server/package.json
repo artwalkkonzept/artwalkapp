@@ -6,23 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [
-    "nodejs",
-    "express",
-    "rest",
-    "api",
-    "mongodb",
-    "upload",
-    "download",
-    "file",
-    "multipart",
-    "multer",
-    "pagination",
-    "mongoose",
-    "paginate",
-    "server",
-    "side"
-  ],
   "author": "ArtWalk",
   "license": "ISC",
   "dependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "artwalkapp",
+  "name": "artwalk",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -27,6 +27,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": [
     ">0.2%",
