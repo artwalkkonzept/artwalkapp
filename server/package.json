@@ -1,10 +1,28 @@
 {
-  "name": "artwalk_api",
+  "name": "artwalkapp_heroku_mongodb_api",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "mongodb",
+    "upload",
+    "download",
+    "file",
+    "multipart",
+    "multer",
+    "pagination",
+    "mongoose",
+    "paginate",
+    "server",
+    "side"
+  ],
+  "author": "ArtWalk",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
