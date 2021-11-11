@@ -1,7 +1,8 @@
 {
   "name": "artwalkapp_heroku_mongodb",
   "version": "1.0.0",
-  "private": true,
+  "private": true,  
+  "homepage": "https://artwalkdashboard.herokuapp.com/",
   "scripts": {
     "start": "cd server && node server.js",
     "dev": "cd client && npm start",
