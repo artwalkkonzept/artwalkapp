@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #zip filer
-nodemon.json.zip
+node_modules.zip
 package-lock.json.zip
