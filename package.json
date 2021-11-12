@@ -1,9 +1,9 @@
 {
-  "name": "artwalkapp_heroku_mongodb",
+  "name": "artwalkapp",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cd server && node server.js",
+    "start": "cd server && node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "npm install --prefix client",
     "dev": "cd client && npm start",
