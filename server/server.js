@@ -63,6 +63,10 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+ // "Redirect" all non-API GET requests to React's entry point (index.html)
+ app.get('*', (req, res) =>
+ res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
+);
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
