@@ -33,10 +33,10 @@ db.mongoose
     process.exit();
   });
 
-// simple route
+/* simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to ArtWalk application." });
-});
+});*/
 
 // routes
 require("./app/routes/artwalk.routes")(app);
