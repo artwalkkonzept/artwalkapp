@@ -14,7 +14,7 @@
     "authentication",
     "mongodb"
   ],
-  "artwalkor": "ArtWalk",
+  "author": "artwalk",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -23,5 +23,9 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.1"
+  },
+  "engines": {
+    "node": "14.17.5",
+    "npm": "8.1.0"
   }
 }
