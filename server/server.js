@@ -50,14 +50,9 @@ db.mongoose
   });
 
 // simple route
-//app.get("/", (req, res) => {
-  //res.json({ message: "Welcome to ArtWalk application." });
-//});
-
-// "Redirect" all non-API GET requests to React's entry point (index.html)
-app.get('/', (req, res) =>
-res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
-);
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to ArtWalk application." });
+});
 
 // routes
 require("./app/routes/artwalk.routes")(app);
