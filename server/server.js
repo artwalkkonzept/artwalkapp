@@ -37,7 +37,12 @@ db.mongoose
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to ArtWalk application." });
 });*/
-
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
 // routes
 require("./app/routes/artwalk.routes")(app);
 require("./app/routes/user.routes")(app);
