@@ -50,6 +50,12 @@ Fullstack (JWT Authentication & Authorization example):
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Routing project with id and token [React App mongodb]
+https://www.youtube.com/watch?v=wMg_b1zZcag
+https://github.com/academind/yt-graphql-react-event-booking-api
+https://acad.link/mongodb
+https://acad.link/reactjs
+
 ### Set port
 .env
 ```

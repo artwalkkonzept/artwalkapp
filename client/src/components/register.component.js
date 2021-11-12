@@ -4,7 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
-import ArtwalkService from "../services/artwalk.service";
+import ArtWalkDataService from "../services/artwalk.service";
 
 const required = value => {
   if (!value) {
@@ -92,7 +92,7 @@ export default class Register extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      ArtwalkService.register(
+      ArtWalkDataService.register(
         this.state.username,
         this.state.email,
         this.state.password

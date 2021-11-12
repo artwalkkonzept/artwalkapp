@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import ArtWalkDataService from "../services/artwalk.service";
 
-export default class Profile extends Component {
+export default class User extends Component {
   constructor(props) {
     super(props);
 
@@ -32,28 +32,11 @@ export default class Profile extends Component {
         {(this.state.userReady) ?
         <div>
         <header className="jumbotron">
-          <h3>
-            <strong>{currentUser.username}</strong> Profile
-          </h3>
+          <h3>The <strong>login user page</strong> of all users.</h3>
+          <p><strong>The current user is </strong>
+          { currentUser.username}
+        </p>
         </header>
-        <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
-        <p>
-          <strong>Id:</strong>{" "}
-          {currentUser.id}
-        </p>
-        <p>
-          <strong>Email:</strong>{" "}
-          {currentUser.email}
-        </p>
-        <strong>Artwalkorities:</strong>
-        <ul>
-          {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-        </ul>
       </div>: null}
       </div>
     );

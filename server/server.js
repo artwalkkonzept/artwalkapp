@@ -1,10 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const dbConfig = require("./app/config/db.config");
+//const dbConfig = require("./app/config/db.config");
 
 const mongoose = require("mongoose");
 const app = express();
+
+
+global.__basedir = __dirname;
+
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -13,15 +17,27 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
+app.use(express.json());  /* bodyParser.json() is deprecated */
+
+
+// parse requests of content-type - application/json
 app.use(bodyParser.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is deprecated */
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
+const initRoutes = require("./src/routes");
 const db = require("./app/models");
 const Role = db.role;
 
+
 db.mongoose
+//.connect(db.url, {
   const url = process.env.MONGO_URL || 'mongodb://localhost/classTest';
   mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
@@ -33,16 +49,11 @@ db.mongoose
     process.exit();
   });
 
-/* simple route
+// simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to ArtWalk application." });
-});*/
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
-}
+});
+
 // routes
 require("./app/routes/artwalk.routes")(app);
 require("./app/routes/user.routes")(app);
@@ -88,3 +99,7 @@ function initial() {
     }
   });
 }
+
+
+initRoutes(app);
+

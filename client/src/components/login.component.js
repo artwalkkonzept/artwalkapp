@@ -3,7 +3,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import ArtwalkService from "../services/artwalk.service";
+import ArtWalkDataService from "../services/artwalk.service";
 
 const required = value => {
   if (!value) {
@@ -53,7 +53,7 @@ export default class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      ArtwalkService.login(this.state.username, this.state.password).then(
+      ArtWalkDataService.login(this.state.username, this.state.password).then(
         () => {
           this.props.history.push("/profile");
           window.location.reload();
