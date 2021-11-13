@@ -21,8 +21,8 @@ import ArtWalksList from "./components/artwalks-list.component";
 import ArtWalksPublish from "./components/artwalk-published.component";
 
 
-//import ImgUpload from "./components/image-upload.component";
-//import Images from "./components/image.component";
+import ImgUpload from "./components/image-upload.component";
+import Images from "./components/image.component";
 
 
 const moment = require('moment'); // require
@@ -119,7 +119,16 @@ class App extends Component {
                 Published post
               </Link>
             </li>
-           
+            <li className="nav-item">
+              <Link to={"/ImgUpload"} className="nav-link">
+                Add Image
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/Images"} className="nav-link">
+              Images
+              </Link>
+            </li>
           </div>
         </nav>
 
@@ -164,6 +173,8 @@ class App extends Component {
             <Route exact path={["/", "/ArtWalks/published"]} component={ArtWalksPublish} />
             <Route exact path="/add" component={AddArtWalk} />
             <Route path="/artwalks/:id" component={ArtWalk} />
+            <Route exact path="/ImgUpload" component={ImgUpload} />
+            <Route exact path="/Images" component={Images} />
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
@@ -191,21 +202,3 @@ export function whoops404() {
     </div>
   )
 }
-
-
-
- /*<li className="nav-item">
-              <Link to={"/ImgUpload"} className="nav-link">
-                Add Image
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/Images"} className="nav-link">
-              Images
-              </Link>
-            </li>
-            
-            
-            <Route exact path="/ImgUpload" component={ImgUpload} />
-            <Route exact path="/Images" component={Images} />
-            */
