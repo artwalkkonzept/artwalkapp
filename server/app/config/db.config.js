@@ -1,10 +1,9 @@
 module.exports = {
   HOST: "mongodb",
   PORT: 27017,
-  DB: "TestArtWalk_db",
+  DB: "classTest"
 
-
-  url: "mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/TestArtWalk_db?retryWrites=true&w=majority"
+  //url: "mongodb+srv://frankild:pc8307pc@artwalkkonzept.rnrwp.mongodb.net/classTest?retryWrites=true&w=majority"
 
 
 };

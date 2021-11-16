@@ -1,16 +1,12 @@
 {
-  "name": "node-js-jwt-artwalk-backend",
+  "name": "artwalkapp_heroku_mongodb_api",
   "version": "1.0.0",
-  "main": "app.js",
-  "engines": {
-    "node": "14.x",
-    "npm": "8.x"
-  },
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "ArtWalk",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,5 +17,9 @@
     "mongoose": "^5.13.9",
     "mongoose-paginate-v2": "^1.3.9",
     "multer": "^1.4.2"
+  },
+  "engines": {
+    "node": "14.17.5",
+    "npm": "8.1.0"
   }
 }
