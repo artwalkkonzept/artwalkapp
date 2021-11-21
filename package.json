@@ -1,7 +1,9 @@
 {
   "name": "artwalkapp_heroku_mongodb",
   "version": "1.0.0",
-  "private": true,
+  "engines": {
+    "node": "14.17.5"
+  },
   "scripts": {
     "start": "cd server && npm start",
     "react-dev": "cd client && npm start",
